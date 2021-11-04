@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Major+Mono+Display&display=swap');
+
+/* Global Styles */
+:root {
+  --primary-color: #204f6e;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  background: white;
+}
+
+.printing {
+  font-family: 'Lexend Deca', sans-serif !important;
+  font-size: 0.65rem;
+  background-color: white;
+  color: black;
+}
+.printing .header {
+  font-family: 'Lexend Deca', sans-serif;
+  margin: 5px; /* reduce the margin at first, keep left */
+  margin-left: 20px;
+}
+.printing .header-img {
+  width: 100px;
+  height: 100px;
+  box-shadow: none;
+}
+.printing h1 {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+a {
+  color: var(--light-color);
+  text-decoration: none;
+  outline: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+.round-img {
+  border-radius: 50%;
+}
+
+h1 {
+  font-family: 'Major Mono Display', monospace;
+}
+
+.header {
+  font-family: 'Major Mono Display', monospace;
+  /* position: sticky; */
+  /* top: 0; */
+  margin: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-img {
+  box-shadow: 4px 4px 0px 7px;
+  width: 170px;
+  height: 170px;
+  --webkit-filter: brightness(1.1);
+  filter: brightness(1.1);
+  visibility: visible;
+}
+@media (max-width: 800px) {
+  .header h3 {
+    display: none;
+  }
+  .header-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.hidden {
+  visibility: hidden;
+}
+
+.main-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+.cv-container {
+  flex: auto;
+  /* border: 2px solid var(--dark-color); */
+  min-width: 40%;
+  padding: 15px 30px;
+}
+.cv-item {
+  margin: 10px 0;
+  max-width: 100%;
+}
+.cv-item-header {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.cv-item-header h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.cv-item-content {
+  max-width: 400px;
+}
+.cv-item li {
+  margin-left: 10px;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 20px
+}
+.footer-container {
+  display: flex;
+  flex-direction: row;
+}
+.footer-item {
+  display: flex;
+  align-items: center;
+  transition: .1s all ease;
+}
+.footer-img {
+  width: 40px;
+  height: auto;
+  margin-left: 10px;
+  padding: 2px;
+}
+.bright {
+  --webkit-filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
+}
+.bright:hover {
+  --webkit-filter: brightness(0) invert(1) blur(1px);
+  filter: brightness(0) invert(1) blur(1px);
+}
+.tiny-img {
+  width: 30px; 
+  height: calc(1.5 * 30px);
+}
+.cursor {
+  cursor: pointer;
+}
+.scale-up:hover {
+  transform: rotate(-10deg)
+}
+
+.disable-select {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  /* Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Text Styles*/
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-dark {
+  color: var(--dark-color);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Cards */
+.card {
+  padding: 1rem;
+  border: #ccc 1px dotted;
+  margin: 0.7rem 0;
+}
+
+/* List */
+.list {
+  margin: 0.5rem 0;
+}
+
+.list li {
+  padding-bottom: 0.3rem;
+}
+
+/* Padding */
+.p {
+  padding: 0.5rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+.py {
+  padding: 0.5rem 0;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+/* Margin */
+.m {
+  margin: 0.5rem;
+}
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 2rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.my {
+  margin: 0.5rem 0;
+}
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+
+/* Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.grid-2-3 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.btn-link {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-sm {
+  font-size: 0.8rem;
+  padding: 0.3rem 1rem;
+  margin-right: 0.2rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  text-align: center;
+  margin: 0.3rem;
+  background: var(--light-color);
+  color: #333;
+  border-radius: 5px;
+}
+
+.alert {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-primary,
+.bg-primary,
+.badge-primary,
+.alert-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-light,
+.bg-light,
+.badge-light,
+.alert-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.btn-dark,
+.bg-dark,
+.badge-dark,
+.alert-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-danger,
+.bg-danger,
+.badge-danger,
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
+}
+
+.btn-success,
+.bg-success,
+.badge-success,
+.alert-success {
+  background: var(--success-color);
+  color: #fff;
+}
+
+.btn-white,
+.bg-white,
+.badge-white,
+.alert-white {
+  background: #fff;
+  color: #333;
+  border: #ccc solid 1px;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.bg-light,
+.badge-light {
+  border: #ccc solid 1px;
+}
+
+/* Forms */
+input {
+  margin: 1.2rem 0;
+}
+
+.form-text {
+  display: block;
+  margin-top: 0.3rem;
+  color: #888;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+input[type='number'],
+select,
+textarea {
+  display: block;
+  width: 100% !important;
+  padding: 0.4rem;
+  font-size: inherit;
+  border: 1px solid #ccc;
+}
+
+input[type='submit'],
+button {
+  font: inherit;
+}
+
+.form-group {
+  margin: 1.2rem 0;
+}
+
+.form-group input {
+  margin: 0.2rem 0;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+table th,
+table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+table th {
+  background: var(--light-color);
+}
