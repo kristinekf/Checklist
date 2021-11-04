@@ -31,14 +31,14 @@ const work_skagen = ['Location: Stavanger', 'OpenCV/Tensorflow, sentiment analys
   </div>
   <div class='cv-container'>
     <h1>voluntary/uni</h1>
-    <Cvitem year='2017-present' title='Web developer, Studentersamfundet i Trondheim' items={work_samf} />
+    <Cvitem year='2017-2020' title='Web developer, Studentersamfundet i Trondheim' items={work_samf} />
     <Cvitem year='2017-2017' title='Business manager, XCOM 18' items={work_xcom} />
     <Cvitem year='2015-2016' title='Software developer, Revolve NTNU' items={work_revolve} />
     <Cvitem year='2014-2015' title='Systems developer, Omega linjeforening' items={work_omega} />
   </div>
   <div class='cv-container'>
     <h1>work experience</h1>
-    <Cvitem year='Aug 2019 - present' title='Part-time software developer, Mito.ai' items={work_mito} />
+    <Cvitem year='Aug 2019 - Jun 2020' title='Part-time software developer, Mito.ai' items={work_mito} />
     <Cvitem year='June 2019 - Aug 2019' title='Summer internship, Mito.ai' items={work_mito_summer} />
     <Cvitem year='Aug 2018 - Mar 2019' title='Part-time software developer, Cloud Insurance' items={work_ci_part} />
     <Cvitem year='June 2018 - Aug 2018' title='Summer internship, Cloud Insurance' items={work_ci} />

@@ -1,10 +1,9 @@
 <script>
 import Header from './Header.svelte';
 import Footer from './Footer.svelte';
-import Content from './Content.svelte';
 import { printable } from './stores.js';
 
-let profilePic = './Images/profile.png';
+let profilePic = './Images/profile.jpg';
 
 let printMode;
 printable.subscribe(val => printMode = val);
@@ -12,7 +11,7 @@ const togglePrintmode = () => printable.update(val => !val)
 window.onbeforeprint = () => togglePrintmode()
 window.onafterprint = () => togglePrintmode()
 
-const email = 'tollefj@gmail.com'
+const email = 't@tollef.xyz'
 const linkedin = 'tollefj'
 const github = 'ph10m'
 
@@ -26,12 +25,11 @@ const github = 'ph10m'
     github={github}
     pic={profilePic}
     titles={[
-      'comp. sci, 5th year, ntnu',
-      "master's in ai/nlp",
-      'part-time developer at mito.ai',
+      'PhD Candidate, Language Technology (DART group)',
+      'Computer scientist (MSc)'
     ]}
   />
-  <Content />
+  <!-- <div class="shape"></div> -->
 </div>
 {#if !printMode}
   <Footer

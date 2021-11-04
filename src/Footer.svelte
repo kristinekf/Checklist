@@ -17,7 +17,7 @@ const showAndCopyEmail = () => {
 }
 </script>
 
-<div class='footer bg-dark'>
+<div class='footer'>
   {#if emailHidden}
     <div in:scale='{{duration: 100}}' on:click={showAndCopyEmail} class='footer-container cursor'>
       <h4 in:scale>copy email</h4>

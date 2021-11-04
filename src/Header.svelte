@@ -2,7 +2,7 @@
 import { fly } from 'svelte/transition';
 import { printable } from './stores.js';
 
-export let name, pic, titles, email, linkedin, github;
+export let name, titles, email, linkedin, github;
 
 // https://stackoverflow.com/a/50049255
 const loaded = new Map();
@@ -41,9 +41,9 @@ printable.subscribe(value => printMode = value);
       {/each}
      {/if}
   </div>
-  <img
+  <!-- <img
     class={imageVisible ? 'header-img' : 'hidden'}
     alt={name}
     use:lazy={{src: pic}}
-  />
+  /> -->
 </div>
