@@ -19,7 +19,7 @@ const showAndCopyEmail = () => {
 
 <div class='footer'>
   {#if emailHidden}
-    <div in:scale='{{duration: 100}}' on:click={showAndCopyEmail} class='footer-container cursor'>
+    <div in:scale='{{duration: 200}}' on:click={showAndCopyEmail} class='footer-container cursor'>
       <h4 in:scale>copy email</h4>
       <img
         class='footer-img tiny-img scale-up'
@@ -28,7 +28,7 @@ const showAndCopyEmail = () => {
       >
     </div>
   {:else}
-    <div in:scale='{{duration:100}}' on:click={showAndCopyEmail} class='footer-container'>
+    <div in:scale='{{duration:200}}' on:click={showAndCopyEmail} class='footer-container'>
       <h4>email copied to clipboard!</h4>
     </div>
   {/if}

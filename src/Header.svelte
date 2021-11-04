@@ -1,6 +1,10 @@
 <script>
-import { fly } from 'svelte/transition';
+import { blur } from 'svelte/transition';
 import { printable } from './stores.js';
+import { onMount } from 'svelte';
+
+let ready = false;
+onMount(() => ready = true);
 
 export let name, titles, email, linkedin, github;
 
@@ -30,15 +34,16 @@ printable.subscribe(value => printMode = value);
 
 <div class='header'>
   <div class='header-text'>
-    <h1>{name}</h1>
+    {#if ready}
+      <h1 in:blur>{name}</h1>
+      {#each titles as title, index (title)}
+        <h4 in:blur='{{delay: (index+1)*200}}'>- {title}</h4>
+      {/each}
+    {/if}
     {#if printMode}
-      <h3>{email}</h3>
+      <h3>Email: {email}</h3>
       <h3>LinkedIn: {linkedin}</h3>
       <h3>GitHub: {github}</h3>
-    {:else}
-      {#each titles as title, index (title)}
-        <h3 in:fly='{{delay: (index+1)*300}}'>{title}</h3>
-      {/each}
      {/if}
   </div>
   <!-- <img
