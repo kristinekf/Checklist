@@ -25,7 +25,7 @@ const github = 'ph10m'
     github={github}
     pic={profilePic}
     titles={[
-      'PhD Candidate, Language Technology (DART group)',
+      'PhD Candidate, NTNU, Language Technology (DART group)',
       'Computer scientist (MSc)'
     ]}
   />
