@@ -20,18 +20,6 @@ function nextStyle() {
   particles = load()
 }
 
-let paused = false;
-function toggleParticles() {
-  console.log(particles)
-  if (particles['paused']) {
-    paused = false;
-    particles.play()
-  } else {
-    paused = true;
-    particles.pause()
-  }
-}
-
 console.log(particles)
 
 import Header from './Header.svelte';
@@ -41,8 +29,15 @@ import { printable } from './stores.js';
 let printMode;
 printable.subscribe(val => printMode = val);
 const togglePrintmode = () => printable.update(val => !val)
-window.onbeforeprint = () => togglePrintmode()
-window.onafterprint = () => togglePrintmode()
+
+window.onbeforeprint = () => {
+  particles.stop()
+  togglePrintmode()
+}
+window.onafterprint = () => {
+  particles.start()
+  togglePrintmode()
+}
 
 const email = 't@tollef.xyz'
 const linkedin = 'tollefj'
@@ -52,7 +47,7 @@ const github = 'ph10m'
 
 <div class:printing={printMode} class='container'>
   <Header
-    name='tollef jørgensen'
+    name='Tollef Jørgensen'
     email={email}
     linkedin={linkedin}
     github={github}
@@ -62,10 +57,12 @@ const github = 'ph10m'
     ]}
   />
   <!-- <div class="shape"></div> -->
-  <div class='buttons'>
-    <!-- <button class='btn-dark btn-sm m-1' on:click={toggleParticles}>{paused ? 'move!!!!' : 'stop this awful animation'}</button> -->
-    <button class='btn-dark btn-sm m-1' on:click={nextStyle}>change style :)</button>
-  </div>
+  {#if !printMode}
+    <div class='buttons'>
+      <!-- <button class='btn-dark btn-sm m-1' on:click={toggleParticles}>toggle</button> -->
+      <button class='btn-dark btn-sm m-1' on:click={nextStyle}>change style :)</button>
+    </div>
+  {/if}
 </div>
 {#if !printMode}
   <Footer

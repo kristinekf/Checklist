@@ -37,7 +37,7 @@ printable.subscribe(value => printMode = value);
     {#if ready}
       <h1 in:blur>{name}</h1>
       {#each titles as title, index (title)}
-        <h4 in:blur='{{delay: (index+1)*200}}'>{title}</h4>
+        <h4 in:blur='{{delay: (index+1)*500}}'>{title}</h4>
       {/each}
     {/if}
     {#if printMode}
