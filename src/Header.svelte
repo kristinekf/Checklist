@@ -1,12 +1,10 @@
 <script>
-import { blur } from 'svelte/transition';
-import { printable } from './stores.js';
 import { onMount } from 'svelte';
 
 let ready = false;
 onMount(() => ready = true);
 
-export let name, titles, email, linkedin, github;
+export let name, titles;
 
 // https://stackoverflow.com/a/50049255
 const loaded = new Map();
@@ -28,23 +26,17 @@ const lazy = (node, data) => {
   };
 }
 
-let printMode;
-printable.subscribe(value => printMode = value);
 </script>
 
 <div class='header'>
   <div class='header-text'>
     {#if ready}
-      <h1 in:blur>{name}</h1>
+      <p class="x-large">{name}</p>
       {#each titles as title, index (title)}
-        <h4 in:blur='{{delay: (index+1)*500}}'>{title}</h4>
+        <!-- <h4 in:blur='{{delay: (index+1)*500}}'>- {title}</h4> -->
+        <p class="medium">{title}</p>
       {/each}
     {/if}
-    {#if printMode}
-      <h3>Email: {email}</h3>
-      <h3>LinkedIn: {linkedin}</h3>
-      <h3>GitHub: {github}</h3>
-     {/if}
   </div>
   <!-- <img
     class={imageVisible ? 'header-img' : 'hidden'}

@@ -5,4 +5,5 @@ const app = new Cv({
   props: {}
 });
 
+
 export default app;

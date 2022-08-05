@@ -1,52 +1,53 @@
 const opts_geom = {
-  fpsLimit: 60,
+  fpsLimit: 48,
   particles: {
     number: {
-      value: 30,
+      value: 10,
       density: {
         enable: true,
         value_area: 800
       }
     },
     color: {
-      value: "#ff0000",
+      value: "#990",
       animation: {
         enable: true,
-        speed: 10,
-        sync: true
+        speed: 20,
+        sync: false
       }
     },
     shape: {
-      type: ["circle", "square"]
+      type: ["circle"],
     },
     opacity: {
-      value: 0.3
+      value: 1.0
     },
     size: {
       value: 20,
       random: {
         enable: true,
-        minimumValue: 10
+        minimumValue: 5
       }
     },
     rotate: {
       value: 0,
       direction: "clockwise",
       animation: {
-        speed: 5,
-        enable: true
+        speed: 10,
+        enable: false,
       }
     },
     move: {
       enable: true,
-      speed: 3,
+      speed: 1,
       direction: "none",
       out_mode: "out"
     }
   },
   detectRetina: true,
   background: {
-    color: "#17163e"
+    // color: "#17163e"
+    color: "black"
   }
 }
 
