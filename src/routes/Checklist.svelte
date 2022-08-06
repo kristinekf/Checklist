@@ -41,7 +41,6 @@
             <li>
                 <div class="grid-custom">
                 <input type="checkbox"
-                    class="fancy-checkbox"
                     checked={current_checked.includes(item)}
                     on:click={(e) => {
                         updateChecked(e, index)

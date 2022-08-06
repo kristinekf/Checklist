@@ -1,7 +1,5 @@
 <script>
-import {opts_normal, opts_geom, opts_fireworks} from './particles.js'
 import Checklist from './routes/Checklist.svelte'
-import NotFound from './routes/NotFound.svelte'
 import Home from './Home.svelte'
 
 const routeMap = {
@@ -9,7 +7,8 @@ const routeMap = {
   "/list": Checklist,
 };
 
-let page = routeMap[location.hash.slice(1)];
+const hash = location.hash.slice(1) || "/";
+let page = routeMap[hash];
 
 function changingRoute() {
   const hash = location.hash.slice(1)

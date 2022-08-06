@@ -1,0 +1,26 @@
+{
+    "short_name": "checklist",
+    "name": "five-checklist-items",
+    "start_url": "/#/list",
+    "icons": [
+      {
+        "src": "android-chrome-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "background_color": "black",
+    "display": "standalone",
+    "scope": "/#/list",
+    "theme_color": "white",
+    "shortcuts": [
+      {
+        "name": "Checklist",
+        "short_name": "Checklist",
+        "description": "Check off five things a day!",
+        "url": "/#/list?source=pwa",
+        "icons": [{ "src": "/apple-touch-icon.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "Check off five things a day!"
+}
