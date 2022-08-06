@@ -359,8 +359,22 @@ ul {
 
 .grid-custom {
   display: grid;
-  grid-template-columns: 30px auto;
+  grid-template-columns: auto 30px;
   grid-gap: 1ch;
+}
+
+.grid-box {
+  display: flex;
+  justify-content: center;
+}
+
+.knapp {
+  padding: 1ch;
+  border: 1px solid white;
+  border-radius: 0;
+  background-color: transparent;
+  color: white;
+  box-shadow: 0px 0px 10px 0px;
 }
 
 /* large checkbox */
