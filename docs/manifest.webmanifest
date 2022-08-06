@@ -1,0 +1,17 @@
+{
+  "name": "Checklist",
+  "short_name": "chklst",
+  "description": "Five checklist items a day!",
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#000",
+  "theme_color": "#fff",
+  "display": "standalone", 
+  "icons": [
+      {
+        "src": "android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "700x700"
+      }
+  ]
+}
