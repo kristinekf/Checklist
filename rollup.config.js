@@ -9,30 +9,30 @@ import css from 'rollup-plugin-css-only';
 const production = !process.env.ROLLUP_WATCH;
 const distfolder = 'docs'
 
-function serve() {
-	let server;
+// function serve() {
+// 	let server;
 
-	function toExit() {
-		if (server) server.kill(0);
-	}
+// 	function toExit() {
+// 		if (server) server.kill(0);
+// 	}
 
-	return {
-		writeBundle() {
-		if (server) return;
-		server = require("child_process").spawn(
-			"npm",
-			["run", "start", "--", "--dev", "--single"],
-			{
-			stdio: ["ignore", "inherit", "inherit"],
-			shell: true,
-			}
-		);
+// 	return {
+// 		writeBundle() {
+// 		if (server) return;
+// 		server = require("child_process").spawn(
+// 			"npm",
+// 			["run", "start", "--", "--dev", "--single"],
+// 			{
+// 			stdio: ["ignore", "inherit", "inherit"],
+// 			shell: true,
+// 			}
+// 		);
 
-		process.on("SIGTERM", toExit);
-		process.on("exit", toExit);
-		},
-	};
-}
+// 		process.on("SIGTERM", toExit);
+// 		process.on("exit", toExit);
+// 		},
+// 	};
+// }
 
 export default {
 	input: 'src/main.js',
@@ -60,7 +60,7 @@ export default {
 		// https://github.com/rollup/rollup-plugin-commonjs
 		resolve(),
 		commonjs(),
-		serve(),
+		// serve(),
 
 		// Watch the `docs` directory and refresh the
 		// browser on changes when not in production

@@ -1,21 +1,25 @@
 <script>
 import {opts_normal, opts_geom, opts_fireworks} from './particles.js'
-import Todos from './routes/todos.svelte'
+import Checklist from './routes/Checklist.svelte'
+import NotFound from './routes/NotFound.svelte'
 import Home from './Home.svelte'
-import { Router, Route, Link } from 'svelte-routing';
 
-let url = ""
+const routeMap = {
+  "/": Home,
+  "/list": Checklist,
+};
+
+let page = routeMap[location.hash.slice(1)];
+
+function changingRoute() {
+  const hash = location.hash.slice(1)
+  console.log(hash)
+  page = routeMap[hash] || Home
+  console.log(page)
+}
 
 </script>
 
-<Router url="{url}">
-  <!-- <nav>
-    <Link to="/">Home</Link>
-    <Link to="about">About</Link>
-    <Link to="blog">Blog</Link>
-  </nav> -->
-  <div class="container">
-    <Route path="checklist" component="{Todos}" />
-    <Route path="/"><Home /></Route>
-  </div>
-</Router>
+<svelte:window on:hashchange={changingRoute} />
+
+<main> <svelte:component this={page} /> </main>

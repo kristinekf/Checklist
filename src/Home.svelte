@@ -12,7 +12,6 @@
       return tsParticles.domItem(0);
     }
     let particles = load();
-    console.log(particles)
     
     function nextStyle() {
       const idx = opts_idx += 1
